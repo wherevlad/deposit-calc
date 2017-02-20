@@ -44,7 +44,7 @@ int main()
 	}
 		
 		
-	cout << "\n\n\nОтвет: " << sum;
+	cout << "\n\n\nОтвет: \n\n" << sum;
 	
     return 0;
 }
