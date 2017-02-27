@@ -1,14 +1,15 @@
 #include <iostream>
 using namespace std;
 
-int schet (int P, int t, int I){
+int schet (int P, int t, float I){
 	//S - сумма конечная, P - первоначальная сумма 
 	// K - количество дней в году, t - количество дней
 	//I - процентная ставка
 	int K = 365, S;
-	S = P + ((P*I*t)/(K*100));
+	//S = P + ((P*I*t)/(K*100));
+	S = P * (I/100);
 	
-	cout << "\nP + ((P*I*t)/(K*100));" << P << (P*I*t) << (P*I*t)/(K*100) << "    \n";
+	cout << "\n" << P << "*" << (I/100) << "**********\n";
 	
 	return S;
 }
@@ -32,22 +33,22 @@ int main()
 		else cout << "Введите корректное число срока вклада..\n";
 	}
 
-	if (srok >= 0 && srok <= 30) {sum = schet(SumVklad, srok, -10);}
+	if (srok >= 0 && srok <= 30) {sum = schet(SumVklad, srok, -10.0);}
 	else if (srok >= 31 && srok <= 120){
-		if (SumVklad < 100000) {sum = schet(SumVklad, srok, 2);}
-		else {sum = schet(SumVklad, srok, 3);}
+		if (SumVklad < 100000) {sum = schet(SumVklad, srok, 2.0);}
+		else {sum = schet(SumVklad, srok, 3.0);}
 	}
 	else if (srok >= 121 && srok <= 240){
-		if (SumVklad < 100000) {sum = schet(SumVklad, srok, 6);}
-		else {sum = schet(SumVklad, srok, 8);}
+		if (SumVklad < 100000) {sum = schet(SumVklad, srok, 6.0);}
+		else {sum = schet(SumVklad, srok, 8.0);}
 	}
 	else if (srok >= 241 && srok <= 365){
-		if (SumVklad < 100000) {sum = schet(SumVklad, srok, 12);}
-		else {sum = schet(SumVklad, srok, 15);}
+		if (SumVklad < 100000) {sum = schet(SumVklad, srok, 12.0);}
+		else {sum = schet(SumVklad, srok, 15.0);}
 	}
 	
 
-	cout << "\n\n\nОтвет: " << sum;
+	cout << "\n\n\nОтвет: " << SumVklad+sum;
 	
     return 0;
 }
